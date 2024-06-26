@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    background-color: pink;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.3rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: rgb(250, 6, 128);
+}
