@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import MainPage from './pages/MainPage';
-import CreateBlogPost from './pages/CreateBlogPost';
+import CreatePost from './pages/CreatePost';
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
 
             <Routes>
                 <Route path='/' exact element={<MainPage />} />
-                <Route path='/create-post' element={<CreateBlogPost />} />
+                <Route path='/create-post' element={<CreatePost />} />
             </Routes>
         </Router>
     );
