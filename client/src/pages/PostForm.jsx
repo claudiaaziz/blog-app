@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
 const PostForm = () => {
+    const navigate = useNavigate();
+    
     const [username, setUsername] = useState('');
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -11,7 +14,7 @@ const PostForm = () => {
             username,
             title,
             body,
-        });
+        }).then(navigate('/'));
     };
 
     return (

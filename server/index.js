@@ -39,6 +39,19 @@ app.post('/api/posts', (req, res) => {
     );
 });
 
+app.post('/api/likes', (req, res) => {
+    const postId = req.body.postId;
+
+    db.query(
+        'UPDATE posts SET likes = likes + 1 WHERE id = ?',
+        postId,
+        (err, result) => {
+            if (err) console.log(err);
+            else console.log(result);
+        }
+    );
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
 });

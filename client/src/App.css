@@ -1,6 +1,11 @@
 body {
     margin: 0;
     padding-top: 100px;
+    background-color: rgba(255, 255, 255, 0.49);
+}
+
+h2 {
+    margin: 0;
 }
 
 input,
@@ -32,7 +37,8 @@ button {
 }
 
 button:hover {
-    color: rgb(250, 6, 128);
+    background-color: rgb(250, 6, 128);
+    color: white;
 }
 
 /* navbar */
@@ -94,10 +100,28 @@ button:hover {
     min-height: 200px;
     flex-direction: column;
     cursor: pointer;
+    justify-content: space-between;
 }
 
 .post-index-item:hover {
     color: rgb(250, 6, 128);
+}
+
+.post-index-item .post-index-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-index-item .likes-div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.post-index-item .like-btn {
+    width: fit-content;
+    margin: 0;
 }
 
 /* post show */
@@ -107,5 +131,12 @@ button:hover {
     margin: 0 auto;
     padding: 20px;
     border-radius: 20px;
-    min-height: 200px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post div h2 {
+    margin-bottom: 40px;
 }
