@@ -8,15 +8,29 @@ const PORT = 5010;
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {});
+app.get('/api/posts', (req, res) => {
+    db.query('SELECT * FROM posts', (err, result) => {
+        if (err) console.log(err);
+        else res.send(result);
+    });
+});
 
-app.post('/api/create', (req, res) => {
+app.get('/api/post/:id', (req, res) => {
+    const postId = req.params.id;
+
+    db.query('SELECT * FROM posts WHERE id = ?', postId, (err, result) => {
+        if (err) console.log(err);
+        else res.send(result);
+    });
+});
+
+app.post('/api/posts', (req, res) => {
     const username = req.body.username;
     const title = req.body.title;
     const body = req.body.body;
 
     db.query(
-        'INSERT INTO Posts (username, title, body) VALUES (?,?,?)',
+        'INSERT INTO posts (username, title, body) VALUES (?,?,?)',
         [username, title, body],
         (err, result) => {
             if (err) console.log(err);

@@ -1,8 +1,10 @@
 body {
     margin: 0;
+    padding-top: 100px;
 }
 
-input, textarea {
+input,
+textarea {
     background-color: rgba(255, 192, 203, 0.232);
     border: none;
     border-radius: 5px;
@@ -19,9 +21,10 @@ textarea {
 
 button {
     border: none;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 20px;
+    padding: 10px 15px;
     width: 50%;
+    font-size: 0.9rem;
     color: white;
     margin: 0 auto;
     background-color: pink;
@@ -29,9 +32,10 @@ button {
 }
 
 button:hover {
-    background-color: rgb(250, 6, 128);
+    color: rgb(250, 6, 128);
 }
 
+/* navbar */
 .navbar {
     background-color: pink;
     padding: 20px;
@@ -40,6 +44,10 @@ button:hover {
     justify-content: center;
     gap: 20px;
     font-size: 1.3rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .navbar a {
@@ -52,15 +60,52 @@ button:hover {
     color: rgb(250, 6, 128);
 }
 
-.create-post {
+/* post form */
+.post-form {
     height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.create-post form {
+.post-form form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+/* posts index */
+.posts-index {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+    width: 70vw;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* post index item */
+.post-index-item {
+    background-color: rgba(255, 192, 203, 0.232);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    min-height: 200px;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.post-index-item:hover {
+    color: rgb(250, 6, 128);
+}
+
+/* post show */
+.post {
+    background-color: rgba(255, 192, 203, 0.232);
+    width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    min-height: 200px;
 }

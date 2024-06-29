@@ -1,18 +1,22 @@
 import { useState } from 'react';
-import Axios from 'axios'
+import Axios from 'axios';
 
-const CreatePost = () => {
+const PostForm = () => {
     const [username, setUsername] = useState('');
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
 
     const createPost = () => {
-        Axios.post('http://localhost:5010/api/create', {username, title, body})
-    }
+        Axios.post('http://localhost:5010/api/posts', {
+            username,
+            title,
+            body,
+        });
+    };
 
     return (
-        <div className='create-post'>
-            <form action=''>
+        <div className='post-form' onSubmit={createPost}>
+            <form>
                 <label htmlFor='username'>Username:</label>
                 <input
                     type='text'
@@ -34,10 +38,10 @@ const CreatePost = () => {
                     placeholder='Your post content'
                     onChange={(e) => setBody(e.target.value)}
                 ></textarea>
-                <button onClick={createPost}>Create Post</button>
+                <button>Create Post</button>
             </form>
         </div>
     );
 };
 
-export default CreatePost;
+export default PostForm;

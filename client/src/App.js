@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-import MainPage from './pages/MainPage';
-import CreatePost from './pages/CreatePost';
+import PostsIndex from './pages/PostsIndex';
+import PostForm from './pages/PostForm';
+import Post from './pages/Post';
 
 function App() {
     return (
@@ -10,8 +11,9 @@ function App() {
             <Navbar />
 
             <Routes>
-                <Route path='/' exact element={<MainPage />} />
-                <Route path='/create-post' element={<CreatePost />} />
+                <Route path='/' exact element={<PostsIndex />} />
+                <Route path='/post-form' element={<PostForm />} />
+                <Route path='/post/:id' element={<Post />} />
             </Routes>
         </Router>
     );
